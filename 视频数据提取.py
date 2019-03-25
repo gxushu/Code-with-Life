@@ -1,5 +1,9 @@
 # coding=utf-8
-
+'''
+   功能：爬取视频图像（谷歌浏览器）
+   1、修改Host和从cookie
+   2、
+'''
 import urllib.request
 import urllib3
 from time import strftime, sleep
@@ -58,7 +62,7 @@ def getUrl(urls):
     #     dest_resp = requests.get(url)
     #     # 视频是二进制数据流，content就是为了获取二进制数据的方法
     #     data = dest_resp.content
-    #     path = u'C:/Users/小米笔记本/Desktop/mp4chouyan/' + str(name)
+    #     path = u'C:/Users/Desktop/mp4/' + str(name)
     #     f = open(path, 'wb')
     #     f.write(data)
     #     f.close()
@@ -79,29 +83,21 @@ def getUrl(urls):
     for img in imgLst:
         print(img)
         try:
-            urllib.request.urlretrieve(img, 'E:/代码文档/Head Calculation/%s.jpg' % int(round(time.time() * 1000)))
+            urllib.request.urlretrieve(img, 'E:/code with lief/%s.jpg' % int(round(time.time() * 1000)))
         except urllib.error.HTTPError:
             continue
     print("over")
 
 for i in range(0,1):
     try :
-        #urls ="http://58.67.161.51:8180/gps-web//evidence/reloadTable.html?paramsGrid={\"page\":1,\"pageSize\":1000,\"sortName\":\"alarmTime\",\"sortOrder\":\"desc\",\"whereparams\":[{\"name\":\"startTime\",\"value\":\"2018-10-25 00:00:00\"},{\"name\":\"endTime\",\"value\":\"2018-10-29 13:53:19\"},{\"name\":\"eventCode\",\"value\":\"6\"},{\"name\":\"unitId\",\"value\":\"\"},{\"name\":\"vehicleId\",\"value\":\"\"},{\"name\":\"driverId\",\"value\":\"\"}]}"
-        #urls = "http://gdky.e-trans.com.cn:8060/gps-web//evidence/reloadTable.html?paramsGrid={\"page\":1,\"pageSize\":1000,\"sortName\":\"alarmTime\",\"sortOrder\":\"desc\",\"whereparams\":[{\"name\":\"startTime\",\"value\":\"2019-01-09 00:00:00\"},{\"name\":\"endTime\",\"value\":\"2019-01-09 09:28:20\"},{\"name\":\"eventCode\",\"value\":\"6\"},{\"name\":\"unitId\",\"value\":\"\"},{\"name\":\"vehicleId\",\"value\":\"\"},{\"name\":\"driverId\",\"value\":\"\"}]}"
-        urls = "http://121.201.83.194:8040/ops-web//report/historyPic/queryPicListByVehicleId.html?vehicleId=75497&startTime=2019-02-25%2000:00:00&endTime=2019-02-25%2011:06:19&dbKey=dbGzky"
-
+        urls = "（写入网站地址）&startTime=2019-02-25%2000:00:00&endTime=2019-02-25%2011:06:19&dbKey=dbGzky"
         print (urls);
         sleep(1)
         getUrl(urls)
 
     except SyntaxError:
         continue
-        # print("replice")
-        # urls = "http://hbky.e-trans.com.cn:15068/gps-web//report/historyPic/queryPicListByVehicleIdForMore.html?vehicleId=93112,102393,102394,102395,102396,102397,102398,102399,102401,102402,102404,102405,102407,102408,102409,102410,102411,102412,102413,102415,102416,102418,102420,102421,102424,102425,102426,102427,102428&startTime=2018-07-01%2000:00:00&endTime=2018-07-19%2010:03:30&pageSize="+str(num)
-        # print(urls);
-        # sleep(1)
-        # getUrl(urls)
-
+      
 
 
 
