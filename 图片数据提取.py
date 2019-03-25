@@ -1,4 +1,3 @@
-
 # coding=utf-8
 '''
 #该脚本的功能爬去数据库的图片数据
@@ -6,8 +5,6 @@
     2、修改Host
     3、修改存储文件路径
 '''
-
-
 import urllib.request
 import urllib3
 from time import strftime, sleep
@@ -49,7 +46,7 @@ def getUrl(urls):
     for img in imgLst:
         print(img)
         try:
-            urllib.request.urlretrieve(img, 'E:/code with life/Head Calculation/3/%s.jpg' % int(round(time.time() * 1000)))  #图片存入路径
+            urllib.request.urlretrieve(img, 'E:/code with life/3/%s.jpg' % int(round(time.time() * 1000)))  #图片存入路径
         except urllib.error.HTTPError:
             continue
     print("over")
@@ -60,21 +57,16 @@ for i in range(1,1000):
     print(i)
     num = num + 30
     try :#,200019,200041,200085,200091,200095,200096,200102,200105,200107,200109,200163wu,200210
-        #urls ="http://121.201.83.194:8040/ops-web//report/historyPic/queryPicListByVehicleIdForMore.html?vehicleId=88043&startTime=2018-10-01%2000:00:00&endTime=2018-10-31%2009:58:21&dbKey=dbGzky&pageSize="+str(num)
+       
         #爬取数据的地址
-        urls ="http://121.201.83.194:8040/ops-web//report/historyPic/queryPicListByVehicleIdForMore.html?vehicleId=75497&startTime=2019-03-01%2000:00:00&endTime=2019-03-25%2016:46:04&dbKey=dbGzky&pageSize="+str(num)
-              #http://121.201.83.194:8040/ops-web//report/historyPic/queryPicListByVehicleIdForMore.html?vehicleId=75497&startTime=2019-01-01%2000:00:00&endTime=2019-01-21%2016:46:04&pageSize=140&dbKey=dbGzky
+        urls ="写入自己的图像数据库地址"+str(num)
+             
         print (urls);
         sleep(1)
         getUrl(urls)
     except SyntaxError:
         listpagNum.append(i)
-        continue
-        # print("replice")
-        # urls = "http://hbky.e-trans.com.cn:15068/gps-web//report/historyPic/queryPicListByVehicleIdForMore.html?vehicleId=93112,102393,102394,102395,102396,102397,102398,102399,102401,102402,102404,102405,102407,102408,102409,102410,102411,102412,102413,102415,102416,102418,102420,102421,102424,102425,102426,102427,102428&startTime=2018-07-01%2000:00:00&endTime=2018-07-19%2010:03:30&pageSize="+str(num)
-        # print(urls);
-        # sleep(1)
-        # getUrl(urls)
+        continu
     print(num)
 print(listpagNum)
 
